@@ -1,0 +1,60 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+}
+.button{
+    width: 500px;
+    height: 150px;
+    background-color:orange;
+    border-radius: 100px;
+    position: relative;
+}
+.button:hover::before{
+    width: 500px;
+    height: 150px;
+    content:"";
+    animation:back 2s infinite;
+    position: absolute;
+    border-radius: 100px;
+    transition: 10s;
+    animation-timing-function: ease-in-out;
+
+}
+.button::after{
+    content: "SUBSCRIBE";
+    width: 500PX;
+    height: 150PX;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:70px ;
+    color:#fff;
+    position: absolute;
+}
+
+
+@keyframes back{
+    0%{
+        background-image: linear-gradient(to right,rgb(255, 165, 0),red);
+        box-shadow:-10px -10px 15px rgba(255,0,0,0.5),
+        10px 10px 15px rgba(255, 165, 0,0.5);
+    }
+    50%{
+        background-image: linear-gradient(to right,red,#4432a8);
+        box-shadow:-10px -10px 15px rgba(68,50,168,0.5),
+        10px 10px 15px rgba(255,0,0,0.5);
+    }
+    100%{
+        background-image: linear-gradient(to righ,#4432a8,#983294);
+        box-shadow:-10px -10px 15px rgba(168,50,148,0.5),
+        10px 10px 15px rgba(68,50,168,0.5);
+    }
+    
+}
